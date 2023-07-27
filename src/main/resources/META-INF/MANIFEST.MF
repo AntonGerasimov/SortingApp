@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: org.gerasimov.sorting.SortingApp
+Main-Class: org.gerasimov.sorting.ArraySorter
 

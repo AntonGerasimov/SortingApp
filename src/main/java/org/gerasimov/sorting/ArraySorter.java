@@ -1,13 +1,12 @@
 package org.gerasimov.sorting;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
+
 
 
 
 public class ArraySorter {
 
-    private final Logger LOGGER = Logger.getLogger(ArraySorter.class.getName());
 
     public String sort(String[] args){
 
