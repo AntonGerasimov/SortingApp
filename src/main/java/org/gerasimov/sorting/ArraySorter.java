@@ -3,20 +3,13 @@ package org.gerasimov.sorting;
 import java.util.Arrays;
 
 
-
-
 public class ArraySorter {
 
 
-    public String sort(String[] args){
+    public String sort(String... args) {
 
-        if ( (args.length == 0) || (args == null) ){
-            throw new IllegalArgumentException("Arguments are missing");
-        }
+        validate(args);
 
-        if (args.length > 10){
-            throw new IllegalArgumentException("Too much arguments. Try to enter less then 11 arguments");
-        }
         int[] integerArray = new int[args.length];
 
         for (int i = 0; i < args.length; i++) {
@@ -26,6 +19,30 @@ public class ArraySorter {
         Arrays.sort(integerArray);
 
         return convertToString(integerArray);
+    }
+
+    private void validate(String[] args) {
+        if (args == null) {
+            throw new IllegalArgumentException("Input array is null");
+        }
+
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Input array is empty");
+        }
+
+        for (String arg: args
+             ) {
+            try{
+                int testInt = Integer.parseInt(arg);
+            }catch(NumberFormatException e){
+                throw new IllegalArgumentException("Input array contains invalid elements. All elements should be whole numbers");
+            }
+
+        }
+
+        if (args.length > 10) {
+            throw new IllegalArgumentException("Too much arguments. Try to enter less then 11 arguments");
+        }
     }
 
 

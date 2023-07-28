@@ -11,7 +11,7 @@ public class App {
         ArraySorter arraySorter = new ArraySorter();
 
         try{
-            System.out.println(arraySorter.sort(args));
+            System.out.println(arraySorter.sort("asd"));
         } catch(IllegalArgumentException e){
             LOGGER.log(Level.SEVERE, e.getMessage());
         }
