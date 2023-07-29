@@ -42,6 +42,15 @@ public class ArraySorterTest {
         arraySorter.sort(inputArray);
     }
 
+    @Test
+    public void shouldThrowExceptionWhenArrayIsNull() {
+        String[] inputArray = null;
+
+        thrownException.expect(IllegalArgumentException.class);
+        thrownException.expectMessage("Input array is null");
+        arraySorter.sort(inputArray);
+    }
+
 
     @Test
     public void shouldThrowExceptionWhenArrayHasTooMuchElements() {
