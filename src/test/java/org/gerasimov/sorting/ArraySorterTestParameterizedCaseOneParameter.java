@@ -3,29 +3,34 @@ package org.gerasimov.sorting;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
 @Category(ArraySorterTest.class)
-public class ArraySorterTestParameterized {
-    enum Type {UNSORTED, SORTED}
-
-    ;
+public class ArraySorterTestParameterizedCaseOneParameter {
 
     @Parameters
-    public static Collection dataForUnsorted() {
+    public static Collection data() {
         return Arrays.asList(new String[][][]{
-                {{"0", "1", "-1"}, {"-1 0 1"}}, {{"2", "4", "0"}, {"0 2 4"}}
+                {{"0"}, {"0"}},
+                {{"1"}, {"1"}},
+                {{"2"}, {"2"}},
+                {{"3"}, {"3"}},
+                {{"4"}, {"4"}},
+                {{"5"}, {"5"}},
+                {{"6"}, {"6"}},
+                {{"7"}, {"7"}},
+                {{"8"}, {"8"}},
+                {{"9"}, {"9"}},
+                {{"10"}, {"10"}}
         });
     }
 
@@ -33,21 +38,18 @@ public class ArraySorterTestParameterized {
     private final String[] inputArray;
     private final String expectedString;
 
-    public ArraySorterTestParameterized(String[] inputArray,
-                                        String[] expectedString) {
-
+    public ArraySorterTestParameterizedCaseOneParameter(String[] inputArray,
+                                                        String[] expectedString) {
         this.arraySorter = new ArraySorter();
         this.inputArray = inputArray;
         this.expectedString = expectedString[0];
     }
 
-//    @Test
-//    @Parameters(method = "dataForUnsorted")
-//    public void shouldReturnCorrectSum() {
-//        String actualString = arraySorter.sort(inputArray);
-//        assertEquals(expectedString, actualString);
-////        assertThat(actualString).isEqualByComparingTo(expectedString);
-//    }
+    @Test
+    public void shouldSortCorrectlyArrayWithOneElement() {
+        String actualString = arraySorter.sort(inputArray);
+        assertEquals(expectedString, actualString);
+    }
 
 
 }
