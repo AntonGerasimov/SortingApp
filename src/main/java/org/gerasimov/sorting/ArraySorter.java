@@ -10,7 +10,7 @@ public class ArraySorter {
 
         validate(args);
 
-        int[] integerArray = new int[args.length];
+        Integer[] integerArray = new Integer[args.length];
 
         for (int i = 0; i < args.length; i++) {
             integerArray[i] = Integer.parseInt(args[i]);
@@ -18,7 +18,16 @@ public class ArraySorter {
 
         Arrays.sort(integerArray);
 
-        return convertToString(integerArray);
+        return convertArrayToString(integerArray);
+    }
+
+    public String convertArrayToString(Object[] array) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Object element : array
+        ) {
+            stringBuilder.append(element.toString() + " ");
+        }
+        return stringBuilder.toString().trim();
     }
 
     private void validate(String[] args) {
@@ -37,7 +46,7 @@ public class ArraySorter {
         for (String arg : args
         ) {
             try {
-                int testInt = Integer.parseInt(arg);
+                int wholeNumber = Integer.parseInt(arg);
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("Input array contains invalid elements. All elements should be whole numbers");
             }
@@ -46,13 +55,4 @@ public class ArraySorter {
 
     }
 
-
-    private String convertToString(int[] array) {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (int i = 0; i < array.length; i++) {
-            stringBuilder.append(array[i] + " ");
-        }
-        return stringBuilder.toString().trim();
-    }
 }
