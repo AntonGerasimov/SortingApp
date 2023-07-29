@@ -29,7 +29,7 @@ public class ArraySorterTestParameterizedCaseTenParameters {
     private final String expectedString;
 
     public ArraySorterTestParameterizedCaseTenParameters(String[] inputArray,
-                                                        String[] expectedString) {
+                                                         String[] expectedString) {
         this.arraySorter = new ArraySorter();
         this.inputArray = inputArray;
         this.expectedString = expectedString[0];

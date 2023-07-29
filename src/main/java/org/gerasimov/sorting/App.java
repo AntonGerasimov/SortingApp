@@ -2,20 +2,20 @@ package org.gerasimov.sorting;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 public class App {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         final Logger LOGGER = Logger.getLogger(ArraySorter.class.getName());
 
         ArraySorter arraySorter = new ArraySorter();
 
-        try{
+        try {
             System.out.println(arraySorter.sort(args));
-        } catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             LOGGER.log(Level.SEVERE, e.getMessage());
         }
-
 
     }
 }

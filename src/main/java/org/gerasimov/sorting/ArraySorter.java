@@ -30,19 +30,20 @@ public class ArraySorter {
             throw new IllegalArgumentException("Input array is empty");
         }
 
-        for (String arg: args
-             ) {
-            try{
+        if (args.length > 10) {
+            throw new IllegalArgumentException("Too much arguments. Try to enter less then 11 arguments");
+        }
+
+        for (String arg : args
+        ) {
+            try {
                 int testInt = Integer.parseInt(arg);
-            }catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("Input array contains invalid elements. All elements should be whole numbers");
             }
 
         }
 
-        if (args.length > 10) {
-            throw new IllegalArgumentException("Too much arguments. Try to enter less then 11 arguments");
-        }
     }
 
 
