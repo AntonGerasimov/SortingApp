@@ -7,14 +7,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        final Logger LOGGER = Logger.getLogger(ArraySorter.class.getName());
+        final Logger logger = Logger.getLogger(ArraySorter.class.getName());
 
         ArraySorter arraySorter = new ArraySorter();
 
         try {
-            System.out.println(arraySorter.sort(args));
+            logger.log(Level.INFO, "Sorted array is: " + arraySorter.sort(args));
         } catch (IllegalArgumentException e) {
-            LOGGER.log(Level.SEVERE, e.getMessage());
+            logger.log(Level.SEVERE, e.getMessage());
         }
 
     }
