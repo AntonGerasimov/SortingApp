@@ -14,30 +14,30 @@ import static org.junit.Assert.assertEquals;
 @Category(ArraySorterTest.class)
 public class ArraySorterTestParameterizedCaseTenParameters {
 
+    private final ArraySorter arraySorter;
+    private final String[] inputArrayInString;
+    private final String expectedString;
+
     @Parameterized.Parameters
     public static Collection data() {
-        return Arrays.asList(new String[][][]{
-                {{"0", "0", "0", "0", "0", "0", "0", "0", "0", "0"}, {"0 0 0 0 0 0 0 0 0 0"}},
-                {{"0", "2", "1", "6", "5", "4", "9", "7", "8", "3"}, {"0 1 2 3 4 5 6 7 8 9"}},
-                {{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}, {"0 1 2 3 4 5 6 7 8 9"}},
-                {{"3", "2", "1", "6", "5", "4", "9", "8", "7", "0"}, {"0 1 2 3 4 5 6 7 8 9"}}
+        return Arrays.asList(new String[][]{
+                {"0 0 0 0 0 0 0 0 0 0", "0 0 0 0 0 0 0 0 0 0"},
+                {"0 2 1 6 5 4 9 7 8 3", "0 1 2 3 4 5 6 7 8 9"},
+                {"0 1 2 3 4 5 6 7 8 9", "0 1 2 3 4 5 6 7 8 9"},
+                {"3 2 1 6 5 4 9 8 7 0", "0 1 2 3 4 5 6 7 8 9"}
         });
     }
 
-    private final ArraySorter arraySorter;
-    private final String[] inputArray;
-    private final String expectedString;
-
-    public ArraySorterTestParameterizedCaseTenParameters(String[] inputArray,
-                                                         String[] expectedString) {
+    public ArraySorterTestParameterizedCaseTenParameters(String inputArrayInString,
+                                                         String expectedString) {
         this.arraySorter = new ArraySorter();
-        this.inputArray = inputArray;
-        this.expectedString = expectedString[0];
+        this.inputArrayInString = inputArrayInString.split(" ");
+        this.expectedString = expectedString;
     }
 
     @Test
     public void shouldSortCorrectlyArrayWithTenElements() {
-        String actualString = arraySorter.sort(inputArray);
+        String actualString = arraySorter.sort(inputArrayInString);
         assertEquals(expectedString, actualString);
     }
 
