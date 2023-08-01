@@ -4,8 +4,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runner.Runner;
 
 import static org.junit.Assert.*;
 
@@ -64,7 +62,7 @@ public class ArraySorterTest {
     }
 
     @Test
-    public void shouldThrowExceptionWhenArrayContainsNonIntegerElement_StringCase(){
+    public void shouldThrowExceptionWhenArrayContainsNonIntegerElement_StringCase() {
         String[] inputArray = {"1", "2", "three", "4"};
 
         thrownException.expect(IllegalArgumentException.class);
@@ -73,7 +71,7 @@ public class ArraySorterTest {
     }
 
     @Test
-    public void shouldThrowExceptionWhenArrayContainsNonIntegerElement_DoubleCase(){
+    public void shouldThrowExceptionWhenArrayContainsNonIntegerElement_DoubleCase() {
         String[] inputArray = {"1", "2", "1.1", "4"};
 
         thrownException.expect(IllegalArgumentException.class);
