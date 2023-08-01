@@ -12,9 +12,9 @@ public class App {
         ArraySorter arraySorter = new ArraySorter();
 
         try {
-            String inputLoggerMessage = "Input array: " + arraySorter.convertArrayToString(args);
+            String inputLoggerMessage = String.format("Input array: %s", arraySorter.convertArrayToString(args));
             logger.log(Level.INFO, inputLoggerMessage);
-            String outputLoggerMessage = "Sorted array: " + arraySorter.sort(args);
+            String outputLoggerMessage = String.format("Sorted array: %s", arraySorter.sort(args));
             logger.log(Level.INFO,  outputLoggerMessage);
         } catch (IllegalArgumentException e) {
             logger.log(Level.SEVERE, e.getMessage());
