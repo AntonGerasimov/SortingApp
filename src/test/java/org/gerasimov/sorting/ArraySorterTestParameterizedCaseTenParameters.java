@@ -10,8 +10,9 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
+//@RunWith(Parameterized.class)
 @RunWith(Parameterized.class)
-@Category(ArraySorterTest.class)
+//@Category(ArraySorterTest.class)
 public class ArraySorterTestParameterizedCaseTenParameters {
 
     private final ArraySorter arraySorter;
