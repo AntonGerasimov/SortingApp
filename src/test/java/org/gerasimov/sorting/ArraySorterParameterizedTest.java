@@ -16,7 +16,7 @@ public class ArraySorterParameterizedTest {
     private final String expectedString;
 
     @Parameterized.Parameters
-    public static Collection data() {
+    public static Collection<String[]> data() {
         return Arrays.asList(new String[][]{
                 {"0 0 0 0 0 0 0 0 0 0", "0 0 0 0 0 0 0 0 0 0"},
                 {"0 2 1 6 5 4 9 7 8 3", "0 1 2 3 4 5 6 7 8 9"},
