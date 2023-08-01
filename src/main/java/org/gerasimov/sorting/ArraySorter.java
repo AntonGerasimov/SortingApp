@@ -46,7 +46,7 @@ public class ArraySorter {
         for (String arg : args
         ) {
             try {
-                int wholeNumber = Integer.parseInt(arg);
+                Integer.parseInt(arg);
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("Input array contains invalid elements. All elements should be whole numbers");
             }
