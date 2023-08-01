@@ -25,7 +25,7 @@ public class ArraySorter {
         StringBuilder stringBuilder = new StringBuilder();
         for (Object element : array
         ) {
-            stringBuilder.append(element.toString() + " ");
+            stringBuilder.append(element.toString()).append(" ");
         }
         return stringBuilder.toString().trim();
     }
